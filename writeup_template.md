@@ -5,7 +5,6 @@
 ###You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
 
 ---
-
 **Behavioral Cloning Project**
 
 The goals / steps of this project are the following:
@@ -15,8 +14,6 @@ The goals / steps of this project are the following:
 * Test that the model successfully drives around track one without leaving the road
 * Summarize the results with a written report
 
-
-[//]: # (Image References)
 
 [image1]: ./examples/placeholder.png "Model Visualization"
 [image2]: ./examples/placeholder.png "Grayscaling"
@@ -64,6 +61,8 @@ The data is normalized and croped in the model using a Keras lambda and crop lay
 ####2. Attempts to reduce overfitting in the model
 
 The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 13-14). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+
+Dropout did not give great improvement towards the validation loss, so I decided not to use it.
 
 ####3. Model parameter tuning
 
@@ -117,6 +116,12 @@ The final model architecture (model.py lines 71-83) is shown below with the foll
 ####3. Creation of the Training Set & Training Process
 
 I simply uses the sample data but using flipping and all three cameras to augment the data size to about 38500 images.
+
+Here is a sample of flipping:
+![Flip](https://github.com/myladyace/CarND-Behavioral-Cloning/blob/master/training%20sample/flip.PNG)
+
+and also a example of using 3 camerates with corrected steering angles:
+![3 Cameras](https://github.com/myladyace/CarND-Behavioral-Cloning/blob/master/training%20sample/three_cameras.png)
 
 Then I randomly shuffled the data set and put 20% of the data into a validation set. 
 
